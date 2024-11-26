@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:12.3-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=sb_widgets_dev_db
+      - POSTGRES_PASSWORD=123321
+    volumes:
+      - sb_widgets_dev_db-volume:/var/lib/postgresql/data
+    ports:
+      - 8501:5432
+
+volumes:
+  sb_widgets_dev_db-volume:
